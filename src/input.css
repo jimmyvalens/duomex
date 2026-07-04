@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+    --color-celeste-oscuro: #124062;
+    --color-celeste-apagado: #5a7d9b;
+    --color-naranja: #fa8700;
+}
