@@ -68,7 +68,7 @@
           <div class="md:hidden">
             <button
               id="mobile-menu-button"
-              class="relative w-10 h-10 text-slate-600 hover:bg-slate-100 rounded-lg transition flex items-center justify-center"
+              class="relative w-10 h-10 text-slate-600 hover:bg-slate-100 rounded-lg transition flex items-center justify-center cursor-pointer"
             >
               <svg
                 id="menu-icon"
@@ -91,32 +91,35 @@
       </div>
     </header>
 
-    <!-- Menú Móvil con fondo unificado -->
+    <!-- Menú Móvil -->
     <div
       id="mobile-menu"
-      class="hidden md:hidden fixed top-20 left-0 right-0 z-40 bg-white/70 backdrop-blur-md border-b border-slate-200/50 py-6 shadow-xl"
+      class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out fixed top-16 left-0 right-0 z-40 bg-white/70 backdrop-blur-md shadow-xl"
     >
-      <div class="flex flex-col items-center space-y-6">
-        <a
-          href="#inicio"
-          class="text-slate-600 font-medium hover:text-naranja transition"
-          >Inicio</a
-        >
-        <a
-          href="#ventajas"
-          class="text-slate-600 font-medium hover:text-naranja transition"
-          >Ventajas</a
-        >
-        <a
-          href="#catalogo"
-          class="text-slate-600 font-medium hover:text-naranja transition"
-          >Catálogo</a
-        >
-        <a
-          href="#contacto"
-          class="bg-naranja text-white px-8 py-3 rounded-lg font-bold shadow-md"
-          >Contactar</a
-        >
+      <div class="overflow-hidden">
+        <!-- El flex debe ir aquí dentro, dentro del div con overflow-hidden -->
+        <nav class="flex flex-col items-center space-y-6 py-6">
+          <a
+            href="#inicio"
+            class="menu-link text-slate-600 font-medium hover:text-naranja transition"
+            >Inicio</a
+          >
+          <a
+            href="#ventajas"
+            class="menu-link text-slate-600 font-medium hover:text-naranja transition"
+            >Ventajas</a
+          >
+          <a
+            href="#catalogo"
+            class="menu-link text-slate-600 font-medium hover:text-naranja transition"
+            >Catálogo</a
+          >
+          <a
+            href="#contacto"
+            class="menu-link bg-naranja text-white px-8 py-3 rounded-lg font-bold shadow-md"
+            >Contactar</a
+          >
+        </nav>
       </div>
     </div>
 
@@ -252,17 +255,18 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            ¿Por qué elegir Duomex?
+            Gestión global de suministros
           </h2>
           <p class="text-lg text-slate-300 max-w-2xl mx-auto">
-            Material de alto rendimiento respaldado por un servicio logístico y
-            técnico de primer nivel.
+            Optimizamos la adquisición de equipos de perforación. Nos encargamos
+            de todo el proceso de importación para que usted reciba material de
+            primera línea, sin complicaciones logísticas ni demoras
+            innecesarias.
           </p>
         </div>
 
         <!-- Grid de Tarjetas de Cristal -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Tarjeta 1: Calidad -->
           <div
             class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/15 hover:border-naranja/50 transition-all duration-300 group"
           >
@@ -279,21 +283,18 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 00-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                 ></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">
-              Máxima Durabilidad
-            </h3>
+            <h3 class="text-xl font-bold text-white mb-3">Sourcing Global</h3>
             <p class="text-slate-300 leading-relaxed text-sm">
-              Aleaciones de acero de primera calidad y tratamientos térmicos
-              avanzados que garantizan una vida útil superior en los terrenos
-              más abrasivos.
+              Conectamos sus necesidades con los mejores fabricantes
+              internacionales. Seleccionamos proveedores de confianza para
+              garantizar estándares internacionales de calidad.
             </p>
           </div>
 
-          <!-- Tarjeta 2: Stock -->
           <div
             class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/15 hover:border-naranja/50 transition-all duration-300 group"
           >
@@ -310,18 +311,18 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                 ></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">Stock Permanente</h3>
+            <h3 class="text-xl font-bold text-white mb-3">Gestión Logística</h3>
             <p class="text-slate-300 leading-relaxed text-sm">
-              Amplio inventario en almacén nacional para asegurar tiempos de
-              respuesta inmediatos y evitar paradas innecesarias en su obra.
+              Coordinamos toda la cadena de suministro, desde el origen hasta su
+              puerta. Nos encargamos de la importación y seguimiento para que
+              usted no tenga que preocuparse.
             </p>
           </div>
 
-          <!-- Tarjeta 3: Soporte -->
           <div
             class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl hover:bg-white/15 hover:border-naranja/50 transition-all duration-300 group"
           >
@@ -338,17 +339,15 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m0 5.656l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
                 ></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">
-              Asesoramiento Técnico
-            </h3>
+            <h3 class="text-xl font-bold text-white mb-3">Atención Dedicada</h3>
             <p class="text-slate-300 leading-relaxed text-sm">
-              Le ayudamos a seleccionar el varillaje y los tallantes exactos
-              para optimizar el rendimiento de su maquinaria según el tipo de
-              formación rocosa.
+              Servicio de atención directa y personalizada. Actuamos como su
+              puente de comunicación con fábrica, resolviendo sus dudas y
+              agilizando cada proceso.
             </p>
           </div>
         </div>
@@ -378,47 +377,44 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Tarjeta 1 -->
           <div
             class="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
           >
-            <!-- Imagen con Zoom -->
-            <!-- Le he añadido un fondo muy suave (bg-slate-50) y un padding (p-6) para que las imágenes sin fondo destaquen mejor -->
             <div
               class="h-64 overflow-hidden bg-slate-50 p-6 flex items-center justify-center"
             >
               <img
-                src="./img/sin_fondo/catalogo_7.png"
-                alt="Varillaje de perforación"
+                src="./img/sin_fondo/catalogo_3.png"
+                alt="Martillos DTH"
                 class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-md"
               />
             </div>
-
-            <!-- Contenido con Glasmorfismo -->
             <div
               class="relative p-8 bg-white/80 backdrop-blur-sm -mt-10 rounded-t-2xl border-t border-white/20"
             >
               <span
                 class="text-naranja font-bold text-sm tracking-widest uppercase"
-                >Varillaje</span
+                >Martillos</span
               >
               <h3 class="text-2xl font-black text-celeste-oscuro mt-1 mb-3">
-                Serie Heavy Duty
+                Martillos DTH
               </h3>
-              <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                Varillaje reforzado con aleación de carbono para una
-                transferencia de energía máxima y mayor resistencia a la fatiga.
+              <p
+                class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3"
+              >
+                Equipos de alta eficiencia diseñados para una transmisión de
+                energía de impacto óptima, garantizando una perforación rápida y
+                constante en las condiciones más exigentes.
               </p>
               <a
-                href="detalle-producto.html"
+                href="#contacto"
                 class="block w-full text-center py-3 bg-celeste-oscuro text-white font-bold rounded-lg hover:bg-naranja transition-colors duration-300"
               >
-                Ver Especificaciones
+                Solicitar Información
               </a>
             </div>
           </div>
 
-          <!-- Tarjeta 2 -->
           <div
             class="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
           >
@@ -426,8 +422,8 @@
               class="h-64 overflow-hidden bg-slate-50 p-6 flex items-center justify-center"
             >
               <img
-                src="./img/sin_fondo/catalogo_4.png"
-                alt="Tallante"
+                src="./img/sin_fondo/catalogo_5.png"
+                alt="Brocas DTH"
                 class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-md"
               />
             </div>
@@ -436,25 +432,27 @@
             >
               <span
                 class="text-naranja font-bold text-sm tracking-widest uppercase"
-                >Tallantes</span
+                >Brocas</span
               >
               <h3 class="text-2xl font-black text-celeste-oscuro mt-1 mb-3">
-                Tecnología PDC
+                Brocas DTH
               </h3>
-              <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                Diseñados para formaciones rocosas extremadamente duras con
-                pastillas de carburo de tungsteno de alta densidad.
+              <p
+                class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3"
+              >
+                Brocas de alto rendimiento con insertos de carburo de tungsteno
+                reforzado, optimizadas para ofrecer la máxima tasa de
+                penetración y una vida útil prolongada en roca dura.
               </p>
               <a
-                href="detalle-producto.html"
+                href="#contacto"
                 class="block w-full text-center py-3 bg-celeste-oscuro text-white font-bold rounded-lg hover:bg-naranja transition-colors duration-300"
               >
-                Ver Especificaciones
+                Solicitar Información
               </a>
             </div>
           </div>
 
-          <!-- Tarjeta 3 -->
           <div
             class="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
           >
@@ -462,31 +460,33 @@
               class="h-64 overflow-hidden bg-slate-50 p-6 flex items-center justify-center"
             >
               <img
-                src="./img/sin_fondo/catalogo_7.png"
-                alt="Varillaje de perforación"
+                src="./img/sin_fondo/catalogo_9.png"
+                alt="Tubos de perforación"
                 class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-md"
               />
             </div>
-
             <div
               class="relative p-8 bg-white/80 backdrop-blur-sm -mt-10 rounded-t-2xl border-t border-white/20"
             >
               <span
                 class="text-naranja font-bold text-sm tracking-widest uppercase"
-                >Varillaje</span
+                >Tubos</span
               >
               <h3 class="text-2xl font-black text-celeste-oscuro mt-1 mb-3">
-                Serie Heavy Duty
+                Tubos DTH
               </h3>
-              <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                Varillaje reforzado con aleación de carbono para una
-                transferencia de energía máxima y mayor resistencia a la fatiga.
+              <p
+                class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3"
+              >
+                Tubos de acero aleado de alta resistencia, fabricados mediante
+                procesos de precisión para asegurar una conexión perfecta y una
+                integridad estructural superior bajo torsión.
               </p>
               <a
-                href="detalle-producto.html"
+                href="#contacto"
                 class="block w-full text-center py-3 bg-celeste-oscuro text-white font-bold rounded-lg hover:bg-naranja transition-colors duration-300"
               >
-                Ver Especificaciones
+                Solicitar Información
               </a>
             </div>
           </div>
@@ -562,7 +562,6 @@
     <section id="contacto" class="relative py-24 bg-slate-950">
       <!-- Imagen de fondo con overlay y degradado para integrarse con el footer -->
       <div class="absolute inset-0 z-0">
-        <!-- Reemplaza el src con una imagen real tuya (ej. maquinaria, chispas, metal) -->
         <img
           src="img/con_fondo/contacto_bg.avif"
           alt="Fondo industrial"
@@ -584,8 +583,8 @@
           </h2>
           <div class="w-16 h-1 bg-naranja mx-auto rounded-full mb-4"></div>
           <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-            Estamos a su disposición para resolver cualquier duda técnica o
-            gestionar sus pedidos de forma ágil y profesional.
+            Estamos a su disposición para resolver cualquier duda o gestionar
+            sus pedidos de forma ágil y profesional.
           </p>
         </div>
 
@@ -609,77 +608,41 @@
               <h3 class="text-2xl font-bold mb-8">Información Directa</h3>
 
               <!-- Bloques de Información -->
-              <div class="space-y-8">
-                <!-- Ubicación -->
-                <div class="flex items-start group">
-                  <div
-                    class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-naranja transition-colors duration-300"
+              <div class="flex items-start group">
+                <div
+                  class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-naranja transition-colors duration-300"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"
-                      ></path>
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="ml-5">
-                    <h4 class="text-white font-bold text-lg mb-1">
-                      Sede Central
-                    </h4>
-                    <p class="text-slate-300 text-sm">
-                      Polígono Industrial Los Llanos, Nave 4<br />06220
-                      Villafranca de los Barros, España
-                    </p>
-                  </div>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    ></path>
+                  </svg>
                 </div>
-
-                <!-- Contacto Directo -->
-                <div class="flex items-start group">
-                  <div
-                    class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-naranja transition-colors duration-300"
+                <div class="ml-5">
+                  <h4 class="text-white font-bold text-lg mb-1">
+                    Atención Comercial
+                  </h4>
+                  <p class="text-slate-300 text-sm mb-2">
+                    Operamos a nivel nacional e internacional.
+                  </p>
+                  <a
+                    href="tel:+34600000000"
+                    class="block text-slate-300 text-sm hover:text-white transition-colors"
+                    >Socio 1: +34 600 000 000</a
                   >
-                    <svg
-                      class="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="ml-5">
-                    <h4 class="text-white font-bold text-lg mb-1">
-                      Contacto Directo
-                    </h4>
-                    <a
-                      href="mailto:duomex@email.com"
-                      class="block text-slate-300 text-sm hover:text-white transition-colors mb-1"
-                      >duomex@email.com</a
-                    >
-                    <a
-                      href="tel:+34600000000"
-                      class="block text-slate-300 text-sm hover:text-white transition-colors"
-                      >+34 600 000 000</a
-                    >
-                  </div>
+                  <a
+                    href="tel:+34600000001"
+                    class="block text-slate-300 text-sm hover:text-white transition-colors"
+                    >Socio 2: +34 600 000 001</a
+                  >
                 </div>
               </div>
             </div>
@@ -821,7 +784,7 @@
 
               <button
                 type="submit"
-                class="w-full group inline-flex justify-center items-center px-6 py-4 text-lg font-bold rounded-xl text-white bg-celeste-oscuro hover:bg-slate-800 transition-all duration-300 mt-4 shadow-lg hover:shadow-xl"
+                class="w-full group inline-flex justify-center items-center px-6 py-4 text-lg font-bold rounded-xl text-white bg-celeste-oscuro hover:bg-slate-800 transition-all duration-300 mt-4 shadow-lg hover:shadow-xl cursor-pointer"
               >
                 Enviar Solicitud
                 <svg
@@ -1004,6 +967,27 @@
         </div>
       </div>
     </footer>
+
+    <!-- Botón flotante -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-6 right-6 z-50 p-3 bg-naranja text-white rounded-full shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none cursor-pointer"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        ></path>
+      </svg>
+    </button>
   </body>
 
   <!-- Script sencillo para el menú móvil -->
@@ -1011,16 +995,40 @@
     const btn = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
     const iconPath = document.getElementById("icon-path");
+    const menuLinks = document.querySelectorAll(".menu-link");
 
-    btn.addEventListener("click", () => {
-      const isOpen = !menu.classList.contains("hidden");
-      menu.classList.toggle("hidden");
+    // Función para alternar el menú
+    function toggleMenu() {
+      const isClosed = menu.classList.contains("grid-rows-[0fr]");
 
-      // Animación de cambio a X
-      if (!isOpen) {
-        iconPath.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Icono X
+      if (isClosed) {
+        menu.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
+        iconPath.setAttribute("d", "M6 18L18 6M6 6l12 12"); // X
       } else {
-        iconPath.setAttribute("d", "M4 6h16M4 12h16m-7 6h7"); // Icono Hamburguesa
+        menu.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
+        iconPath.setAttribute("d", "M4 6h16M4 12h16m-7 6h7"); // Hamburguesa
+      }
+    }
+
+    // Evento para el botón
+    btn.addEventListener("click", toggleMenu);
+
+    // Evento para cada enlace (cierra el menú al hacer clic)
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (menu.classList.contains("grid-rows-[1fr]")) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Script para mostrar el botón al hacer scroll
+    window.addEventListener("scroll", () => {
+      const btnTop = document.getElementById("back-to-top");
+      if (window.scrollY > 300) {
+        btnTop.classList.remove("opacity-0", "pointer-events-none");
+      } else {
+        btnTop.classList.add("opacity-0", "pointer-events-none");
       }
     });
   </script>
