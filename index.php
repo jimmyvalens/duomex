@@ -598,9 +598,29 @@
           </h3>
 
           <?php if (isset($_GET['status'])): ?>
-            <div class="p-4 mb-4 text-sm text-center rounded-lg <?php echo $_GET['status'] === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'; ?>">
+            <!-- Le añadimos un id="alert-message" para poder manipularlo con JS -->
+            <div id="alert-message" class="p-4 mb-4 text-sm text-center rounded-lg transition-opacity duration-500 <?php echo $_GET['status'] === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'; ?>">
               <?php echo $_GET['status'] === 'success' ? '¡Mensaje enviado correctamente!' : 'Error al enviar el mensaje. Inténtalo de nuevo.'; ?>
             </div>
+
+            <script>
+              // 1. Limpiar la URL inmediatamente (así no se repite al pulsar F5)
+              if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.pathname);
+              }
+
+              // 2. Desvanecer y borrar el mensaje de la pantalla después de 4 segundos
+              setTimeout(function() {
+                const alerta = document.getElementById('alert-message');
+                if (alerta) {
+                  // Añadimos opacidad 0 (clase de Tailwind) para el efecto visual
+                  alerta.classList.add('opacity-0');
+
+                  // Esperamos medio segundo a que termine la animación y lo eliminamos del DOM
+                  setTimeout(() => alerta.remove(), 500);
+                }
+              }, 4000); // 4000 milisegundos = 4 segundos mostrado
+            </script>
           <?php endif; ?>
 
           <!-- Formulario listo para $_POST -->
