@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Duomex | Suministros de Perforación Industrial</title>
   <link rel="stylesheet" href="src/output.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -516,16 +517,8 @@
             <div class="flex items-start group">
               <div
                 class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-naranja transition-colors duration-300">
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                 </svg>
               </div>
               <div class="ml-5">
@@ -577,7 +570,7 @@
           <!-- WhatsApp Integrado en el diseño -->
           <div class="relative z-10 mt-12 pt-8 border-t border-white/10">
             <a
-              href="https://wa.me/34600000000?text=Hola,%20estoy%20interesado%20en%20sus%20suministros."
+              href="https://wa.me/34609635486?text=Hola,%20estoy%20interesado%20en%20sus%20suministros."
               target="_blank"
               class="flex items-center justify-center w-full px-6 py-4 bg-white/10 hover:bg-[#25D366] text-white font-bold rounded-xl transition-all duration-300 border border-white/20 hover:border-transparent group">
               <svg
@@ -592,145 +585,126 @@
         </div>
 
         <!-- Lado Derecho: Formulario Estilizado -->
-        <div class="w-full lg:w-7/12 p-10 lg:p-14 bg-white">
+        <div id="contacto" class="scroll-mt-28 w-full lg:w-7/12 p-10 lg:p-14 bg-white">
           <h3 class="text-2xl font-bold text-slate-800 mb-6">
             Envíenos un mensaje
           </h3>
 
-          <?php if (isset($_GET['status'])): ?>
-            <!-- Le añadimos un id="alert-message" para poder manipularlo con JS -->
-            <div id="alert-message" class="p-4 mb-4 text-sm text-center rounded-lg transition-opacity duration-500 <?php echo $_GET['status'] === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'; ?>">
-              <?php echo $_GET['status'] === 'success' ? '¡Mensaje enviado correctamente!' : 'Error al enviar el mensaje. Inténtalo de nuevo.'; ?>
-            </div>
+          <!-- Tu formulario -->
+          <form action="contacto.php" method="POST" ...>
 
-            <script>
-              // 1. Limpiar la URL inmediatamente (así no se repite al pulsar F5)
-              if (window.history.replaceState) {
-                window.history.replaceState(null, null, window.location.pathname);
-              }
+            <!-- Formulario listo para $_POST -->
+            <form action="contacto.php" method="POST" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label
+                    for="nombre"
+                    class="text-sm font-semibold text-slate-600">Nombre *</label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
+                    placeholder="Ej. Juan Pérez" />
+                  <div id="error-nombre" class="text-red-500 text-sm mt-1"></div>
+                </div>
 
-              // 2. Desvanecer y borrar el mensaje de la pantalla después de 4 segundos
-              setTimeout(function() {
-                const alerta = document.getElementById('alert-message');
-                if (alerta) {
-                  // Añadimos opacidad 0 (clase de Tailwind) para el efecto visual
-                  alerta.classList.add('opacity-0');
+                <div class="space-y-2">
+                  <label
+                    for="telefono"
+                    class="text-sm font-semibold text-slate-600">Teléfono *</label>
+                  <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    required
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
+                    placeholder="+34 600 000 000" />
+                  <div id="error-telefono" class="text-red-500 text-sm mt-1"></div>
+                </div>
 
-                  // Esperamos medio segundo a que termine la animación y lo eliminamos del DOM
-                  setTimeout(() => alerta.remove(), 500);
-                }
-              }, 4000); // 4000 milisegundos = 4 segundos mostrado
-            </script>
-          <?php endif; ?>
 
-          <!-- Formulario listo para $_POST -->
-          <form action="contacto.php" method="POST" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label
+                    for="email"
+                    class="text-sm font-semibold text-slate-600">Correo Electrónico</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
+                    placeholder="ejemplo@correo.com" />
+                  <div id="error-email" class="text-red-500 text-sm mt-1"></div>
+                </div>
+
+                <div class="space-y-2">
+                  <label
+                    for="empresa"
+                    class="text-sm font-semibold text-slate-600">Empresa</label>
+                  <input
+                    type="text"
+                    id="empresa"
+                    name="empresa"
+                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
+                    placeholder="Nombre de su compañía" />
+                </div>
+              </div>
+
               <div class="space-y-2">
                 <label
-                  for="nombre"
-                  class="text-sm font-semibold text-slate-600">Nombre *</label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
+                  for="mensaje"
+                  class="text-sm font-semibold text-slate-600">Detalles de su consulta *</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="4"
                   required
-                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
-                  placeholder="Ej. Juan Pérez" />
+                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400 resize-none"
+                  placeholder="Especifique el material, cantidades o dudas técnicas..."></textarea>
+                <div id="error-mensaje" class="text-red-500 text-sm mt-1"></div>
               </div>
 
-              <div class="space-y-2">
-                <label
-                  for="telefono"
-                  class="text-sm font-semibold text-slate-600">Teléfono *</label>
-                <input
-                  type="tel"
-                  id="telefono"
-                  name="telefono"
-                  required
-                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
-                  placeholder="+34 600 000 000" />
+              <div class="flex items-start pt-2">
+                <div class="flex items-center h-5">
+                  <input
+                    id="privacidad"
+                    name="privacidad"
+                    type="checkbox"
+                    required
+                    class="w-5 h-5 text-naranja bg-slate-50 border-slate-300 rounded focus:ring-naranja/50 cursor-pointer" />
+                </div>
+                <div class="ml-3 text-sm">
+                  <label
+                    for="privacidad"
+                    class="font-medium text-slate-600 cursor-pointer">Acepto la
+                    <a
+                      href="#"
+                      class="text-celeste-oscuro hover:text-naranja underline transition-colors">política de privacidad</a>
+                    y el tratamiento de mis datos.</label>
+                </div>
               </div>
 
-
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="space-y-2">
-                <label
-                  for="email"
-                  class="text-sm font-semibold text-slate-600">Correo Electrónico</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
-                  placeholder="ejemplo@correo.com" />
-              </div>
-
-              <div class="space-y-2">
-                <label
-                  for="empresa"
-                  class="text-sm font-semibold text-slate-600">Empresa</label>
-                <input
-                  type="text"
-                  id="empresa"
-                  name="empresa"
-                  class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
-                  placeholder="Nombre de su compañía" />
-              </div>
-            </div>
-
-            <div class="space-y-2">
-              <label
-                for="mensaje"
-                class="text-sm font-semibold text-slate-600">Detalles de su consulta *</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows="4"
-                required
-                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400 resize-none"
-                placeholder="Especifique el material, cantidades o dudas técnicas..."></textarea>
-            </div>
-
-            <div class="flex items-start pt-2">
-              <div class="flex items-center h-5">
-                <input
-                  id="privacidad"
-                  name="privacidad"
-                  type="checkbox"
-                  required
-                  class="w-5 h-5 text-naranja bg-slate-50 border-slate-300 rounded focus:ring-naranja/50 cursor-pointer" />
-              </div>
-              <div class="ml-3 text-sm">
-                <label
-                  for="privacidad"
-                  class="font-medium text-slate-600 cursor-pointer">Acepto la
-                  <a
-                    href="#"
-                    class="text-celeste-oscuro hover:text-naranja underline transition-colors">política de privacidad</a>
-                  y el tratamiento de mis datos.</label>
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full group inline-flex justify-center items-center px-6 py-4 text-lg font-bold rounded-xl text-white bg-celeste-oscuro hover:bg-slate-800 transition-all duration-300 mt-4 shadow-lg hover:shadow-xl cursor-pointer">
-              Enviar Solicitud
-              <svg
-                class="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
-          </form>
+              <button
+                type="submit"
+                class="w-full group inline-flex justify-center items-center px-6 py-4 text-lg font-bold rounded-xl text-white bg-celeste-oscuro hover:bg-slate-800 transition-all duration-300 mt-4 shadow-lg hover:shadow-xl cursor-pointer">
+                Enviar Solicitud
+                <svg
+                  class="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </form>
         </div>
       </div>
     </div>
@@ -885,6 +859,48 @@
         d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
     </svg>
   </button>
+  <script>
+    document.querySelector('form').addEventListener('submit', async function(e) {
+      e.preventDefault(); // Evita que la página recargue
+
+      // Limpiar errores previos
+      document.querySelectorAll('[id^="error-"]').forEach(el => el.textContent = '');
+
+      const formData = new FormData(this);
+
+      const response = await fetch('contacto.php', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+        Swal.fire({
+          icon: 'success',
+          title: '¡Enviado!',
+          text: 'Tu mensaje se ha enviado correctamente.',
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        this.reset(); // Limpia el formulario
+      } else {
+        // Si hay errores de validación, los ponemos debajo de cada campo
+        if (result.errors) {
+          for (const [key, message] of Object.entries(result.errors)) {
+            document.getElementById(`error-${key}`).textContent = message;
+          }
+        }
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Revisa los campos marcados.'
+        });
+      }
+    });
+  </script>
 </body>
 
 <!-- Script sencillo para el menú móvil -->
