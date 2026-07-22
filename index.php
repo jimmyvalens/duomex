@@ -786,7 +786,7 @@
         </div>
 
         <!-- Columna 3: Información Legal -->
-        <div>
+        <!-- <div>
           <h4
             class="text-white font-bold mb-4 tracking-wide uppercase text-xs">
             Legal
@@ -813,7 +813,7 @@
                 class="text-slate-400 hover:text-naranja transition-colors">Términos y Condiciones</a>
             </li>
           </ul>
-        </div>
+        </div> -->
 
         <!-- Columna 4: Redes Sociales / B2B -->
         <div>
