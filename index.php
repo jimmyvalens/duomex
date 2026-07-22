@@ -4,8 +4,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ========================================== -->
+  <!-- SEO Y METADATOS PRINCIPALES                -->
+  <!-- ========================================== -->
+  <title>DUOMEX | Suministros de Perforación y Soluciones Profesionales</title>
+  <meta name="description" content="Especialistas en suministros de perforación. Ofrecemos soluciones profesionales, eficacia y atención personalizada para tu empresa. ¡Contacta con nosotros!">
+  <meta name="keywords" content="suministros de perforación, duomex, perforación, industrial, herramientas de perforación, pozos de sondeo">
+  <link rel="canonical" href="https://www.duomex.es/">
+  <meta name="robots" content="index, follow">
+
+  <!-- ========================================== -->
+  <!-- OPEN GRAPH (Para WhatsApp, Facebook, LinkedIn) -->
+  <!-- ========================================== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.duomex.es/">
+  <meta property="og:title" content="DUOMEX | Suministros de Perforación">
+  <meta property="og:description" content="Especialistas en suministros de perforación y soluciones profesionales para tu empresa.">
+  <meta property="og:image" content="https://www.duomex.es/img/og-image.jpg">
+
+  <!-- ========================================== -->
+  <!-- TWITTER CARDS                              -->
+  <!-- ========================================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.duomex.es/">
+  <meta name="twitter:title" content="DUOMEX | Suministros de Perforación">
+  <meta name="twitter:description" content="Especialistas en suministros de perforación y soluciones profesionales para tu empresa.">
+  <meta name="twitter:image" content="https://www.duomex.es/img/og-image.jpg">
   <title>Duomex | Suministros de Perforación Industrial</title>
   <link rel="stylesheet" href="src/output.css" />
+  <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -831,8 +861,7 @@
       <div
         class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-sm text-slate-500 text-center md:text-left">
-          &copy; 2026 DUOMEX Suministros de Perforación. Todos los derechos
-          reservados.
+          &copy; <?php echo date('Y'); ?> DUOMEX Suministros de Perforación. Todos los derechos reservados.
         </p>
         <!-- Firma sutil y opcional del desarrollador -->
         <p class="text-xs text-slate-700">
