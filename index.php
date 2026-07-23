@@ -573,7 +573,7 @@
                       stroke-width="2"
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Juanpe: +34 633 94 42 71
+                  Juan Pedro: +34 633 94 42 71
                 </a>
 
                 <a
@@ -591,7 +591,7 @@
                       stroke-width="2"
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Cano: +34 609 63 54 86
+                  Francisco: +34 609 63 54 86
                 </a>
               </div>
             </div>
@@ -650,7 +650,7 @@
                     name="telefono"
                     required
                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400"
-                    placeholder="+34 600 000 000" />
+                    placeholder="600 000 000" />
                   <div id="error-telefono" class="text-red-500 text-sm mt-1"></div>
                 </div>
 
@@ -694,7 +694,7 @@
                   rows="4"
                   required
                   class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-naranja/50 focus:border-naranja outline-none transition-all duration-300 placeholder-slate-400 resize-none"
-                  placeholder="Especifique el material, cantidades o dudas técnicas..."></textarea>
+                  placeholder="Especifique el producto y los detalles de su consulta..."></textarea>
                 <div id="error-mensaje" class="text-red-500 text-sm mt-1"></div>
               </div>
 
